@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<br>
+<p1>Please select set list to view</p1>
+    {% for post in posts %}
+        <div>
+		<h3>{{ post.set_list }}</h3>
+		<p> - Song name:{{ post.song.name }}
+		 - Song album:{{ post.song.album }}
+		 - Song artist:{{ post.song.artist }}
+		 - Song key:{{ post.song.key }}
+		 - Song BPM:{{ post.song.bpm }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

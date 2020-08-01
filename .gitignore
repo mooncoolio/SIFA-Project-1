@@ -1,0 +1,3 @@
+/setlist-app/application/__pycache__
+*.pyc
+/setlist-app/venv
