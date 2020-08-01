@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<br>
+<p1>Songbank</p1>
+{% for song in songs %}
+	<div>
+		<p>|Song Name| {{ song.song_name }}
+		|Album| {{ song.song_album }}
+		|Artist| {{ song.song_artist }}
+		|Key| {{ song.song_key }}
+		|BPM| {{ song.song_bpm }}</p>
+	</div>
+{% endfor %}
+{% endblock %}
