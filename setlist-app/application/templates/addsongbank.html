@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block body_content %}
 <br>
-<p1>Songbank</p1>
+<p1>Select Song to Add to Set</p1>
 {% for song in songs %}
         <div>
                 <p>|ID| {{ song.id }}
@@ -11,11 +11,6 @@
                 |Key| {{ song.song_key }}
                 |BPM| {{ song.song_bpm }}</p>
         </div>
-	<form action="{{ url_for ('song_delete', id=song.id) }}">
-		<button type= "submit">Delete Song</button>
-	</form>
-	<form action="{{ url_for ('song_edit', id=song.id) }}">
-                <button type= "submit">Edit Song</button>
-        </form>
+       
 {% endfor %}
 {% endblock %}

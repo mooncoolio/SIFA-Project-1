@@ -1,5 +1,14 @@
 {% extends "layout.html" %}
 {% block body_content %}
 <br>
-<p1>Use this page to create set lists</p1>
+<p1>Create Set and add Songs</p1>
+        <div class='form'>
+                <form method='POST' action=''>
+                {{ form.hidden_tag() }}
+                {{ form.set_name.label }}
+                {{ form.set_name }}
+                <br>
+                {{ form.submit }}
+                </form>
+                </div>
 {% endblock %}
