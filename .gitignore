@@ -1,3 +1,4 @@
 /setlist-app/application/__pycache__
 *.pyc
 /setlist-app/venv
+/setlist-app/.pytest_cache

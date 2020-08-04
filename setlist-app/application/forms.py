@@ -128,3 +128,7 @@ class UpdateSongForm(FlaskForm):
 	
 	submit = SubmitField('Update Song')
 
+class CreateSetForm(FlaskForm):
+
+
+	submit = SubmitField('Add Song To Set')

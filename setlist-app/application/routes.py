@@ -3,7 +3,7 @@ from flask import render_template, url_for, redirect, request
 # import the app object from the ./application/__init__.py
 from application import app, db
 # importing Songs and SetList Class from models.py
-from application.models import Songs, SetList, setlink
+from application.models import Songs, SetList, SetLink
 # importing song form from forms.py
 from application.forms import SongForm, SetForm, UpdateSongForm
 
@@ -74,6 +74,8 @@ def song_edit(id):
 
 @app.route('/create', methods=['GET', 'POST'])
 def create():
+	setData = SetList.query.all()
+	song = Songs.query.all()
 	form = SetForm()
 	if form.validate_on_submit():
 		setData = SetList(
@@ -84,21 +86,25 @@ def create():
 		return redirect(url_for('create'))
 	else:
 		print(form.errors)
-	return render_template('create.html', title='Create', form=form)
+	return render_template('create.html', title='Create', form=form, set_list=setData, songs=song)
 
+@app.route('/create/addsetsong/<id>/<id1>', methods=['GET','POST'])
+def addsetsong(id, id1):
+	setID = SetList.query.filter_by(id=id).first()
+	songID = Songs.query.filter_by(id=id1).first()
+	setlink1 = SetLink(
+		linksong = songID,
+		linkset = setID
+	)
+	db.session.add(setlink1)
+	db.session.commit()
+	return render_template("create.html", title="Create")
 
+'''
+@app.route('create/addsetsong/<id>')
+def songset():
+	setlist = SetList.query.filter_by(id=id).first()
+	form = CreateSetForm()
+	if form.validate_on_submit():
+'''			
 
-@app.route('/view')
-def view():
-        setData = SetList.query.all()
-        return render_template('view.html', title='View', set_list=setData)
-
-@app.route('/view/addsetsong')
-def addsetsong():
-	songData = Songs.query.all()
-	return render_template("addsongbank.html", title="addsetsong", song=songData)
-
-
-@app.route('/edit')
-def edit():
-	return render_template('edit.html', title='Edit')

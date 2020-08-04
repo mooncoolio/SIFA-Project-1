@@ -11,4 +11,23 @@
                 {{ form.submit }}
                 </form>
                 </div>
+{% for sets in set_list  %}
+        <div>
+                <p>|ID| {{ sets.id }}
+                |Set Name| {{ sets.set_name }}
+                </p>
+        </div>
+	{% for song in songs %}
+        <div>
+                <p>|ID| {{ song.id }}
+                |Song Name| {{ song.song_name }}
+                |Album| {{ song.song_album }}
+                |Artist| {{ song.song_artist }}
+                |Key| {{ song.song_key }}
+                |BPM| {{ song.song_bpm }}</p>
+        </div>
+	<form action="{{ url_for ('addsetsong', id=set_list.id, id1=songs.id) }}">
+                <button type= "submit">Add Song to Set</button>
+	{% endfor %}
+{% endfor %}
 {% endblock %}

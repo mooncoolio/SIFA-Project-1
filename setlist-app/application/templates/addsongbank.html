@@ -2,15 +2,9 @@
 {% block body_content %}
 <br>
 <p1>Select Song to Add to Set</p1>
-{% for song in songs %}
-        <div>
-                <p>|ID| {{ song.id }}
-                |Song Name| {{ song.song_name }}
-                |Album| {{ song.song_album }}
-                |Artist| {{ song.song_artist }}
-                |Key| {{ song.song_key }}
-                |BPM| {{ song.song_bpm }}</p>
-        </div>
-       
+{% for sets in set_list %}
+<div>
+<p>|Set List| {{ sets.set_name }} </p>
+</div>
 {% endfor %}
 {% endblock %}
