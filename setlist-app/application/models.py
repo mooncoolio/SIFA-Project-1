@@ -25,22 +25,23 @@ class Songs(db.Model):
     song_bpm = db.Column(db.Integer, nullable=False)
     setlink2 = db.relationship('SetLink', backref=db.backref('linksong', lazy =True))
 
+    '''   
     def __repr__(self):
         return ''.join([
             'Song Name: ', self.song_name, ' Album: ', self.song_album, ' Artist: ', self.song_artist, ' Key: ', self.song_key, ' BPM: ', self.song_bpm
             ])
-
+    '''
 #creating setlist schema which will contain name of setlist
 class SetList(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     set_name = db.Column(db.String(100), nullable=False)
     setlink1 = db.relationship('SetLink', backref=db.backref('linkset', lazy =True))
-    
+    '''   
     def __repr__(self):
         return ''.join([
             'Set List Name: ', self.set_name
             ])
-
+    '''
 class SetLink(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     fk_song_id = db.Column(db.Integer, db.ForeignKey('songs.id'), nullable=False) 
