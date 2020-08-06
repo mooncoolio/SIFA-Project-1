@@ -1,10 +1,36 @@
 {% extends "layout.html" %}
 {% block body_content %}
 <br>
-<p1>Select Song to Add to Set</p1>
+<h1>Select Song to Add to Set</h1>
+        <div class='form'>
+                <form method='POST' action=''>
+                {{ form.hidden_tag() }}
+                {{ form.linksong.label }}
+                {{ form.linksong }}
+                <br>
+                {{ form.linkset.label }}
+                {{ form.linkset }}
+                <br>
+                {{ form.submit }}
+                </form>
+                </div>
+<p>SetLists</p>
 {% for sets in set_list %}
-<div>
-<p>|Set List| {{ sets.set_name }} </p>
-</div>
+	<div>
+		<p>|ID| {{ sets.id}}
+		|Set List| {{ sets.set_name }} </p>
+	</div>
+{% endfor %}
+<br>
+<p>Songs</p>
+{% for song in songs %}
+        <div>
+                <p>|ID| {{ song.id }}
+                |Song Name| {{ song.song_name }}
+                |Album| {{ song.song_album }}
+                |Artist| {{ song.song_artist }}
+                |Key| {{ song.song_key }}
+                |BPM| {{ song.song_bpm }}</p>
+        </div>
 {% endfor %}
 {% endblock %}

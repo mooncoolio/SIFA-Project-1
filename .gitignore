@@ -2,3 +2,6 @@
 *.pyc
 /setlist-app/venv
 /setlist-app/.pytest_cache
+/setlist-app/.coverage
+/setlist-app/test_results
+/setlist-app/tests/__pycache__

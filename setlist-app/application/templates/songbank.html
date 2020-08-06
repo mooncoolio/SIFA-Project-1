@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 {% block body_content %}
 <br>
-<p1>Songbank</p1>
+<h1>Songbank</h1>
 {% for song in songs %}
         <div>
-                <p>|ID| {{ song.id }}
+                <p>
                 |Song Name| {{ song.song_name }}
                 |Album| {{ song.song_album }}
                 |Artist| {{ song.song_artist }}

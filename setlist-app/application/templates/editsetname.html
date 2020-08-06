@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<br>
+<h1>Edit Set Name</h1>
+        <div class='form'>
+                <form method='POST' action=''>
+                {{ form.hidden_tag() }}
+                {{ form.set_name.label }}
+                {{ form.set_name }}
+                <br>
+                {{ form.submit }}
+                </form>
+                </div>
+{% endblock %}

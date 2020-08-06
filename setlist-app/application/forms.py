@@ -128,7 +128,28 @@ class UpdateSongForm(FlaskForm):
 	
 	submit = SubmitField('Update Song')
 
-class CreateSetForm(FlaskForm):
+class UpdateSetNameForm(FlaskForm):
+        set_name = StringField('Set Name',
+                validators = [
+                        DataRequired(),
+                        Length(min=2, max=100)
 
+                ]
+        )
 
+        submit = SubmitField('Update Setlist Name')
+
+class SongSetForm(FlaskForm):
+	linksong  = IntegerField('Song ID',
+                validators = [
+                        DataRequired(),
+                ]
+        )
+	linkset = IntegerField('Set ID',
+                validators = [
+                        DataRequired(),
+                ]
+        )
 	submit = SubmitField('Add Song To Set')
+
+

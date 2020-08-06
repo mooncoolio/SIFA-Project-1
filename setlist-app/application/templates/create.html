@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block body_content %}
 <br>
-<p1>Create Set and add Songs</p1>
+<h1>Create Set and Edit Name</h1>
         <div class='form'>
                 <form method='POST' action=''>
                 {{ form.hidden_tag() }}
@@ -13,21 +13,19 @@
                 </div>
 {% for sets in set_list  %}
         <div>
-                <p>|ID| {{ sets.id }}
+                <p>
                 |Set Name| {{ sets.set_name }}
                 </p>
         </div>
-{% for song in songs %}
-        <div>
-                <p>|ID| {{ song.id }}
-                |Song Name| {{ song.song_name }}
-                |Album| {{ song.song_album }}
-                |Artist| {{ song.song_artist }}
-                |Key| {{ song.song_key }}
-                |BPM| {{ song.song_bpm }}</p>
-        </div>
-	<form action="{{ url_for ('addsetsong', id=set_list.id, id1=songs.id) }}">
-                <button type= "submit">Add Song to Set</button>
-	{% endfor %}
+	<form action="{{ url_for ('set_delete', id=sets.id) }}">
+                <button type= "submit">Delete Set</button>
+	</form>
+	<form action="{{ url_for ('set_name_edit', id=sets.id) }}">
+                <button type= "submit">Edit Set Name</button>
+	</form>
+	<form action="{{ url_for ('view_song_set', id=sets.id) }}">
+                <button type= "submit">View Set</button>
+        </form>
+	
 {% endfor %}
 {% endblock %}
