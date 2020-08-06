@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<br>
+<h1>Edit Song Details</h1>
+        <div class='form'>
+                <form method='POST' action=''>
+                {{ form.hidden_tag() }}
+                {{ form.song_name.label }}
+                {{ form.song_name }}
+                <br>
+                {{ form.song_album.label }}
+                {{ form.song_album }}
+                <br>
+                {{ form.song_artist.label }}
+                {{ form.song_artist }}
+                <br>
+                {{ form.song_key.label }}
+                {{ form.song_key }}
+                <br>
+                {{ form.song_bpm.label }}
+                {{ form.song_bpm }}
+                <br>
+                {{ form.submit }}
+                </form>
+                </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<br>
+<h1>Create Set and Edit Name</h1>
+        <div class='form'>
+                <form method='POST' action=''>
+                {{ form.hidden_tag() }}
+                {{ form.set_name.label }}
+                {{ form.set_name }}
+                <br>
+                {{ form.submit }}
+                </form>
+                </div>
+{% for sets in set_list  %}
+        <div>
+                <p>
+                |Set Name| {{ sets.set_name }}
+                </p>
+        </div>
+	<form action="{{ url_for ('set_delete', id=sets.id) }}">
+                <button type= "submit">Delete Set</button>
+	</form>
+	<form action="{{ url_for ('set_name_edit', id=sets.id) }}">
+                <button type= "submit">Edit Set Name</button>
+	</form>
+	<form action="{{ url_for ('view_song_set', id=sets.id) }}">
+                <button type= "submit">View Set</button>
+        </form>
+	
+{% endfor %}
+{% endblock %}
