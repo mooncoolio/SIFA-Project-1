@@ -6,3 +6,5 @@
 /setlist-app/test_results
 /setlist-app/tests/__pycache_
 /setlist_app/chromedriver/
+.coverage
+.pytest_cache
