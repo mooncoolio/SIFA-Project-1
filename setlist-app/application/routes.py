@@ -137,4 +137,3 @@ def querysetsong():
 def view_song_set(id):
 	songData = Songs.query.join(SetLink).filter_by(fk_setlist_id=id).all()
 	return render_template('view.html', title='SetList', songs=songData)
-
