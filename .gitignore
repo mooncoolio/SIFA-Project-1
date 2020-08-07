@@ -4,4 +4,5 @@
 /setlist-app/.pytest_cache
 /setlist-app/.coverage
 /setlist-app/test_results
-/setlist-app/tests/__pycache__
+/setlist-app/tests/__pycache_
+/setlist_app/chromedriver/

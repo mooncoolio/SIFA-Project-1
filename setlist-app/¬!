@@ -24,10 +24,8 @@ class TestBase(TestCase):
 		db.create_all()
 		song = Songs(song_name= "Test", song_album="Test", song_artist="Test", song_key="C", song_bpm="125")
 		setlist = SetList(set_name ="Test")
-		setlink = SetLink(fk_song_id ="1",fk_setlist_id="1")
 		db.session.add(setlist)
 		db.session.add(song)
-		db.session.add(setlink)
 		db.session.commit()
 
 	def tearDown(self):
@@ -145,6 +143,5 @@ class TestSetView(TestBase):
 
 	def test_set_view(self):
 		response = self.client.get(url_for('view_song_set', id=1))
-		follow_redirects=True
 		self.assertIn(b'Song Name', response.data)
 		
