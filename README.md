@@ -49,9 +49,9 @@ To achieve our objective I decided my set list app must allow the user to do the
 ## Project Tracking <a name="projecttracking"></a>
 
 To manage my project I needed a project tracker, I decided on using Jira software to manage my project.
-![Kanban Borad](images/jira1.png)
+![Kanban Borad](images/Jira1.png)
 Using it allowed me to break my project down into smaller more manageable tasks. My next point was to define user stories which would allow me to implement MoSCoW prioritization.  I placed all my must have user stories in the must have user stories section while putting the could haves in the product back log.
-![Kanban Board](images/jira2.png)
+![Kanban Board](images/Jira2.png)
 For my project to be successful using agile methodologies I would build my first sprint around developing an app based around 1 user using the must have user stories. 
 
 
@@ -75,7 +75,7 @@ The risk assessment can be found through the following link: https://docs.google
 
 ## Continious Integration Pipeline <a name="cipipeline"></a>
 
-![CI Pipeline](images/CIpipeline.png)
+![CI Pipeline](images/CIpipeline.PNG)
 Pictured above is my continuous integration pipeline. This will allow for a simple deployment of my application as when new code is pushed to git hub a Jenkins web hook installed on my Google Cloud Platform Ubuntnu VM with automatically build my application.
 
 The webhook will initally run my unit tests and integration tests which are run from the repository using pytest. Providing the application passes these tests it will get built.
@@ -93,13 +93,13 @@ Pytest will also provide me with a coverage report which will let me know how mu
 The front end of this application is quite simple at this stage built by very simple html combined with Jinja2 logic to allow it to communicate with the back-end python files.
 
 User is brought to this page when they try and access the application
-![Home Page](images/Home.png)
+![Home Page](images/Home.PNG)
 
 User can then add songs to their song bank
 ![Add Song Bank Page](images/Addtosongbank.png)
 
 Users can view their song bank and edit or delete songs from ther song bank here
-![Song Bank Page](images/SongBank.png)
+![Song Bank Page](images/Songbank.png)
 
 Users can create a blank setlist then view the setlist, edit the set name and delete the set.
 ![View Edit Delete Set](images/ViewEditDelete.png)
