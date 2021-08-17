@@ -1,6 +1,6 @@
 # SIFA PROJECT 1
 
-# Set List App
+# Set List Application
 
 ### Resources
 * Jira: https://ryanwright.atlassian.net/jira/software/projects/SLL/boards/3
