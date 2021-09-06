@@ -1,7 +1,7 @@
 [Unit]
 Description=Set List Service
 [Service]
-User=flask-app
+User=jenkins
 WorkingDirectory=/opt/flask-app
 EnvirornmentFile=/opt/flask-app/flask.env
 ExecStart=/bin/sh -c 'cd /opt/flask-app/setlist-app && . ./venv/bin/activate && gunicorn --workers=4 --bind=0.0.0.0:5000 app:app'
