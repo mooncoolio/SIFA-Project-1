@@ -4,8 +4,8 @@ Description=Set List Service
 User=jenkins
 WorkingDirectory=/opt/flask-app
 EnvirornmentFile=/opt/flask-app/flask.env
-Envirornment='DATABASE_URI=$DATABASE_URI'
-Envirornment='MY_SECRET_KEY=$MY_SECRET_KEY'
+Envirornment=DATABASE_URI=$DATABASE_URI
+Envirornment=MY_SECRET_KEY=$MY_SECRET_KEY
 ExecStart=/bin/sh \
     -c 'cd /opt/flask-app &&\
     . ./venv/bin/activate &&\
