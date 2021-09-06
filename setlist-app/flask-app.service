@@ -3,8 +3,7 @@ Description=Set List Service
 [Service]
 User=jenkins
 WorkingDirectory=/opt/flask-app
-Envirornment=DATABASE_URI='sqlite:///data.db'
-Envirornment=MY_SECRET_KEY='pejrgpijerpgij'
+EnvironmentFile=/opt/flask-app/flask.env
 ExecStart=/bin/sh \
     -c 'cd /opt/flask-app &&\
     . ./venv/bin/activate &&\
